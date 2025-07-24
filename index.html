@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoToilet - Geri Dönüşümlü Tuvalet Sistemleri</title>
+    <title>plastvit</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -12,39 +12,49 @@
 <body>
 
 
-    
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="PLASTVİT Logo" width="150" height="auto">
+        </a>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="PLASTVİT Logo" width="150" height="auto">
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#products">Ürünler</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#products1">PALET</a></li>
-                            <li><a href="#urun2">PİSUVAR</a></li>
-                            <li><a href="#products2">ALATURKA</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#about">Hakkımızda</a></li>
-                    <li><a href="#ilet">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <button class="menu-toggle" id="mobile-menu">&#9776;</button> <!-- Hamburger simgesi -->
+
+        <nav class="nav" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#about">Hakkımızda</a></li>
+                <li class="dropdown">
+                    <a href="#products">Ürünler</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#products1">PALET</a></li>
+                        <li><a href="#urun2">PİSUVAR</a></li>
+                        <li><a href="#products2">ALATURKA</a></li>
+                    </ul>
+                </li>
+                <li><a href="Tesislerimiz.html">Tesislerimiz</a></li>
+                <li><a href="#ilet">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 
 
-    <section class="hero-banner">
-        <img src="assets/makine.jpg" alt="EcoToilet Banner">
+
+
+<section class="hero-banner">
+    <div class="hero-slider">
+        <img src="assets/makine.jpg" class="slide active" alt="Slide 1">
+        <img src="assets/plastikteis.jpg" class="slide" alt="Slide 2">
+        <img src="assets/makine.jpg" class="slide" alt="Slide 3">
+
         <div class="hero-text">
             <h1>Doğaya Dönüş Başlıyor</h1>
             <p>Geri dönüşümlü tuvalet sistemleriyle sürdürülebilir hijyen!</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     
     
@@ -333,12 +343,12 @@
 
 <!-- === POPUP 1 === -->
 <div id="popup1" class="popup">
-    <button class="popup-arrow popup-prev" onclick="prevPopup(1)">&#10094;</button>
     <div class="popup-content">
         <span class="close-btn" onclick="closePopup(1)">×</span>
         <h3 id="popup-title1"></h3>
         <div id="popup-desc1"></div>
     </div>
+    <button class="popup-arrow popup-prev" onclick="prevPopup(1)">&#10094;</button>
     <button class="popup-arrow popup-next" onclick="nextPopup(1)">&#10095;</button>
 </div>
 
@@ -352,6 +362,7 @@
     </div>
     <button class="popup-arrow popup-next" onclick="nextPopup(2)">&#10095;</button>
 </div>
+
 
 
     
@@ -381,8 +392,9 @@
         <div class="about-card">
             <h2 class="about-title">Hakkımızda</h2>
             <div class="about-image">
-                <img src="assets/bina.png" alt="Hakkımızda Görseli">
+                <img src="assets/bina.png" alt="Hakkımızda Görseli" loading="lazy">
             </div>
+
             <div class="about-text">
                 <p>1980 yılında geri dönüşüm faaliyetleriyle temelleri atılan firmamız, Mehmet Zile’nin öncülüğünde kurulmuştur.
                     1999 yılında plastik hammadde üretimine geçerek sektörde önemli bir adım atmış; İstanbul Başakşehir’de
@@ -396,25 +408,41 @@
                     üretim firmasına plastikten granül hammadde sağlayarak
                     kapasitesini ve kalitesini her geçen yıl artırmıştır.</p>
         
-                <p>2024 yılında ise PLASTVİT markasıyla, Tekirdağ Çorlu Velimeşe Organize Sanayi Bölgesi’nde plastik WC, banyo
+                  <p>2024 yılında ise PLASTVİT markasıyla, Tekirdağ Çorlu Velimeşe Organize Sanayi Bölgesi’nde plastik WC, banyo
                     ve plastik palet üretimine başlamıştır.
                     Bugün, geçmişten gelen tecrübemizi ileri teknoloji ile birleştirerek sürdürülebilir üretim anlayışımızı
                     gururla devam ettiriyoruz.</p>
             </div>
         </div>
 
+
+
+
+
+
+       
+
+
+
+        <section class="vision-section">
+            <div class="vision-card">
+                <h2 class="vision-title">Vizyonumuz</h2>
+                <p>Plastvit olarak vizyonumuz; çevreye duyarlı, sürdürülebilir ve yenilikçi üretim anlayışımızla
+                    plastik geri dönüşüm sektöründe öncü bir marka olmaktır.</p>
+        
+                <p>Her ürünümüzde doğayı koruma bilinciyle hareket ediyor; atık plastikleri ileri teknoloji ile işleyerek
+                    yeniden kullanıma kazandırıyoruz. Hedefimiz, gelecek nesillere daha yaşanabilir bir dünya bırakmak
+                    ve bu süreçte kalite, güven ve çevreye saygıdan ödün vermemektir.</p>
+            </div>
+        
+        
+        
+        
+        </section>
+
     
-    <section class="vision-section">
-        <div class="vision-card">
-            <h2 class="vision-title">Vizyonumuz</h2>
-            <p>Plastvit olarak vizyonumuz; çevreye duyarlı, sürdürülebilir ve yenilikçi üretim anlayışımızla
-                plastik geri dönüşüm sektöründe öncü bir marka olmaktır.</p>
-    
-            <p>Her ürünümüzde doğayı koruma bilinciyle hareket ediyor; atık plastikleri ileri teknoloji ile işleyerek
-                yeniden kullanıma kazandırıyoruz. Hedefimiz, gelecek nesillere daha yaşanabilir bir dünya bırakmak
-                ve bu süreçte kalite, güven ve çevreye saygıdan ödün vermemektir.</p>
-        </div>
-    </section>
+
+
 
 
     </section>

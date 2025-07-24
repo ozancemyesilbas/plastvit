@@ -1,41 +1,50 @@
-const cards = document.querySelectorAll('.product-card');
-let currentIndex = 0;
 
-cards.forEach((card, index) => {
-  card.addEventListener('click', () => {
-    currentIndex = index;
-    openPopup(card.dataset.title, card.dataset.content);
-  });
+
+
+
+
+const menuButton = document.getElementById("mobile-menu");
+const navMenu = document.getElementById("nav-menu");
+
+menuButton.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
 });
 
-function openPopup(title, content) {
-  document.getElementById('popup-title').textContent = title;
-  document.getElementById('popup-desc').innerHTML = content;
-  document.getElementById('popup').style.display = 'flex';
-}
-
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-}
-
-function scrollSlider(index, direction) {
-  const track = document.getElementById(`sliderTrack${index}`);
-  const amount = 320;
-  track.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
-}
+// Sayfa scroll edildiğinde menü kapanır
+window.addEventListener("scroll", function () {
+    if (navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open"); // Bu artık gerekmez ama yedekte kalsın
+    }
+});
 
 
-function prevPopup() {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-  const card = cards[currentIndex];
-  openPopup(card.dataset.title, card.dataset.content);
-}
 
-function nextPopup() {
-  currentIndex = (currentIndex + 1) % cards.length;
-  const card = cards[currentIndex];
-  openPopup(card.dataset.title, card.dataset.content);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -101,7 +110,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+const cards = document.querySelectorAll('.product-card');
+let currentIndex = 0;
 
+cards.forEach((card, index) => {
+  card.addEventListener('click', () => {
+    currentIndex = index;
+    openPopup(card.dataset.title, card.dataset.content);
+  });
+});
+
+function openPopup(title, content) {
+  document.getElementById('popup-title').textContent = title;
+  document.getElementById('popup-desc').innerHTML = content;
+  document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+function scrollSlider(index, direction) {
+  const track = document.getElementById(`sliderTrack${index}`);
+  const amount = 320;
+  track.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+}
+
+
+function prevPopup() {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  const card = cards[currentIndex];
+  openPopup(card.dataset.title, card.dataset.content);
+}
+
+function nextPopup() {
+  currentIndex = (currentIndex + 1) % cards.length;
+  const card = cards[currentIndex];
+  openPopup(card.dataset.title, card.dataset.content);
+}
 
 
 const allSliders = document.querySelectorAll('.slider-container');
@@ -134,10 +180,23 @@ function openPopup(sliderId, index) {
     document.getElementById(`popup-title${sliderId}`).textContent = title;
     document.getElementById(`popup-desc${sliderId}`).innerHTML = content;
     popup.style.display = 'flex';
+
+    // ✅ Arka plan kaymasını engelle
+    document.body.style.overflow = 'hidden';
+
+    // ✅ Popup içeriğini ekran ortasına kaydır (mobilde yukarıda kalma sorununu çözer)
+    const popupContent = popup.querySelector('.popup-content');
+    if (popupContent) {
+        popup.scrollTop = 0; // popup içini yukarı al
+        popupContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 function closePopup(sliderId) {
     document.getElementById(`popup${sliderId}`).style.display = 'none';
+
+    // ✅ Kaydırmayı geri aç
+    document.body.style.overflow = '';
 }
 
 function prevPopup(sliderId) {
@@ -153,6 +212,7 @@ function nextPopup(sliderId) {
     currentIndices[sliderId] = (currentIndices[sliderId] + 1) % cards.length;
     openPopup(sliderId, currentIndices[sliderId]);
 }
+
 
 
 
@@ -192,4 +252,113 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 4000); // 4 saniyede bir geçiş
+
+
+
+
+
+
+
+
+
+
+
+
+// Mobilde dropdown menüsünü tıklayınca açılmasını sağlar
+document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        // Sadece mobil görünümde çalışsın
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // #products linkine gitmesini engelle
+            const parent = this.parentElement;
+            parent.classList.toggle("open"); // open class'ı ekle/kaldır
+        }
+    });
+});
+
+
+
+
+
+// Menüdeki bağlantılara tıklanınca menü kapanır ama dropdown başlığına basınca değil
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const isDropdownParent = this.parentElement.classList.contains("dropdown");
+
+        if (window.innerWidth <= 768) {
+            if (!isDropdownParent) {
+                // Normal bağlantı → menüyü kapat
+                document.getElementById("nav-menu").classList.remove("active");
+
+                // Tüm dropdown'ları kapat
+                document.querySelectorAll(".dropdown.open").forEach(drop => {
+                    drop.classList.remove("open");
+                });
+            } else {
+                // Sadece üst dropdown başlığına tıkladı → menü kapanmasın
+                e.preventDefault(); // sayfa kaymasın
+                this.parentElement.classList.toggle("open");
+            }
+        }
+    });
+});
+
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const parentLi = this.parentElement;
+        const isDropdown = parentLi.classList.contains("dropdown");
+
+        if (window.innerWidth <= 768) {
+            if (isDropdown) {
+                // Eğer dropdown ise menüyü kapatma, sadece alt menüyü aç/kapat
+                e.preventDefault(); // "#products" gibi linke gitmesin
+                parentLi.classList.toggle("open");
+            } else {
+                // Normal bağlantıysa menüyü ve açık dropdownları kapat
+                document.getElementById("nav-menu").classList.remove("active");
+
+                document.querySelectorAll(".dropdown.open").forEach(drop => {
+                    drop.classList.remove("open");
+                });
+            }
+        }
+    });
+});
+
+
+
+
+
+
+
+
 
