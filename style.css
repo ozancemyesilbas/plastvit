@@ -443,7 +443,6 @@ body {
 
 
 
-
 /* === Hero Banner Genel === */
 .hero-banner {
     position: relative;
@@ -452,14 +451,25 @@ body {
     overflow: hidden;
 }
 
-/* Slayt konteyneri */
+/* Video arka planı */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* (Eğer slaytlar da kullanılıyorsa) Slayt konteyneri */
 .hero-slider {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* Tüm slayt görselleri */
+/* (Slaytlar için) Tüm slayt görselleri */
 .slide {
     position: absolute;
     top: 0;
@@ -490,7 +500,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     z-index: 2;
-    /* Slaytların üstünde kalır */
+    /* Videonun üstünde olacak */
 }
 
 /* Başlık */
@@ -1125,3 +1135,143 @@ body {
         padding: 30px 15px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.certificates-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.certificates-section h2 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+}
+
+.cert-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.cert-grid img {
+    max-width: 120px;
+    filter: grayscale(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.cert-grid img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* === Lightbox arka plan === */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Lightbox içeriği (görsel + X) */
+#lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sertifika görseli */
+#lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    cursor: zoom-out;
+    transition: transform 0.3s ease;
+}
+
+/* X butonu (görselin üst köşesine sabit) */
+#close-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    font-size: 24px;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+#close-btn:hover {
+    background: #ff4d4d;
+}
+
+/* === Mobil uyum === */
+@media (max-width: 768px) {
+    .cert-grid {
+        gap: 15px;
+    }
+
+    .cert-grid img {
+        max-width: 100px;
+    }
+
+    #lightbox-content {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    #lightbox-img {
+        max-height: 80vh;
+    }
+
+    #close-btn {
+        font-size: 20px;
+        width: 28px;
+        height: 28px;
+        top: -10px;
+        right: -10px;
+    }
+}
+
+
+
+

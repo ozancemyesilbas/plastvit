@@ -362,3 +362,32 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 
 
+
+function openLightbox(img) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// Escape tuşuyla kapatma
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+        closeLightbox();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
