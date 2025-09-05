@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plastvit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="PLASTVİT Logo" width="150" height="auto">
+            </a>
+
+            <button class="menu-toggle" id="mobile-menu">&#9776;</button> <!-- Hamburger simgesi -->
+
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html#about">Hakkımızda</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#products">Ürünler</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#products1">PALET</a></li>
+                            <li><a href="index.html#urun2">PİSUVAR</a></li>
+                            <li><a href="index.html#products2">ALATURKA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">Tesislerimiz</a></li>
+                    <li><a href="index.html#ilet">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<section id="about" class="about-section container">
+    <div class="about-card">
+        <h2 class="about-title">Yağmur Plastik</h2>
+        <div class="about-image">
+            <img src="assets/Başlıksız-1.png" alt="Hakkımızda Görseli" loading="lazy">
+        </div>
+
+        <div class="about-text">
+            <p>Yağmur Geri Dönüşüm Plastik, 4.000 metrekarelik modern üretim tesisinde faaliyet gösteren ve T.C. Çevre, Şehircilik ve
+            İklim Değişikliği Bakanlığı tarafından lisanslandırılmış bir plastik geri dönüşüm kuruluşudur. Gelişmiş teknolojik
+            altyapısı ve çevre dostu üretim anlayışıyla, plastik atıkları yeniden ekonomiye kazandırmayı hedeflemektedir. Birinci
+            kalite üretim yapan tesisimiz ile hizmet vermekteyiz.</p>
+
+            <p>40 yılı aşkın sektör tecrübesine sahip firmamız, geri dönüşüm hammaddeleri alanında güvenilir bir çözüm ortağıdır.
+            Müşteri taleplerine hızlı ve esnek çözümler sunarak, ihtiyaç duyulduğunda Plastvite ürünleri başta olmak üzere farklı
+            türde plastik hammaddeleri temin edebilmektedir. </p>
+
+            <p>Kalite, sürdürülebilirlik,müşteri memnuniyeti ve rekabetçi fiyat
+            politikamız ilkelerini merkeze alan çalışma anlayışımız ile hem ülke ekonomisine hem de çevrenin korunmasına
+            katkı sağlamaktayız.</p>
+
+          
+        </div>
+    </div>
+   
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<section class="gallery-section">
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="assets/fabrikaiçi1.jpg" alt="Resim 1">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="assets/fabrikaiçi2.jpg" alt="Resim 1">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="assets/fabrikaiçi3.jpg" alt="Resim 1">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="assets/fabrikaiçi4.jpg" alt="Resim 1">
+            </div>
+        </div>
+        <!-- Diğer 3 kutu aynı şekilde -->
+    </div>
+</section>
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+  
+
+
+       
+
+
+
+
+        </section>
+
+
+
+
+
+
+    </section>
+
+
+
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-desc"></p>
+        </div>
+    </div>
+
+
+
+    <div class="whatsapp-support" onclick="window.open('https://wa.me/905301234567','_blank')">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+    </div>
+    <div id="whatsappTooltip">Size nasıl yardımcı olabilirim?</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="site-footer">
+        <!-- İletişim Bölümü Footer İçinde -->
+        <section id="ilet" class="contact-section">
+            <h2 class="section-title">İletişim</h2>
+            <p class="section-description">
+                Soru veya görüşleriniz mi var? Bize ulaşmaktan çekinmeyin!
+            </p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <h3>Adres</h3>
+                        <p>Plastvit Tuvalet Ve Banyo San. ve Tic. Ltd. Şti., Velimeşe OSB, 59930 Ergene/Tekirdağ</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Telefon</h3>
+                        <p>+90 212 123 4* *7</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Pazartesi - Cuma: 09:00 - 18:00<br> Cumartesi: 10:00 - 15:00</p>
+                    </div>
+                    <div class="map-box">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12033.553357339655!2d27.967122908331813!3d41.18981353114848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b3dc17f2c154b3%3A0x8e1221e8a29517c6!2sVelime%C5%9Fe%20OSB%2C%2059930%20Ergene%2FTekirda%C4%9F!5e0!3m2!1str!2str!4v1721540000000!5m2!1str!2str"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+
+
+        </section>
+
+        <!-- Sosyal Medya Linkleri (Opsiyonel) -->
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <!-- Telif Hakkı -->
+        <div class="copyright">
+            <p>© 2023 Tüm Hakları Saklıdır | PLASTVİT </p>
+        </div>
+    </footer>
+
+
+
+    <button id="scrollToTopBtn" title="Yukarı Çık">&#8679;</button>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
