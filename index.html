@@ -283,13 +283,18 @@ body{
   max-width:1200px; margin:0 auto; padding:0 20px;
 }
 
-/* Grid yerleşim */
+/* Grid yerleşim (alan adlarıyla) */
 .sectionx3 .recycle-gridx3{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,520px);
   gap:clamp(16px,3.5vw,40px);
   align-items:start;
+  grid-template-areas: "text image";
 }
+
+/* Öğeleri alanlara yerleştir */
+.sectionx3 .cardx3{ grid-area:text; }
+.sectionx3 .stickyx3{ grid-area:image; }
 
 /* Kart görünümü */
 .sectionx3 .cardx3{
@@ -344,9 +349,14 @@ body{
   .sectionx3 .stickyx3{ position:sticky; top:18px; }
 }
 
-/* Mobil düzen */
+/* ====== Mobil düzen: görsel üstte, metin altta ====== */
 @media (max-width:900px){
-  .sectionx3 .recycle-gridx3{ grid-template-columns:1fr; }
+  .sectionx3 .recycle-gridx3{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "image"
+      "text";
+  }
 }
 
 </style>
